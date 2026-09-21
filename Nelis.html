@@ -1,0 +1,796 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090b12" />
+  <title>Flores Amarillas para Nelis Marie Belén Guerrero</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --yellow:#ffd84d;
+      --yellow-2:#ffec8a;
+      --gold:#e7ad22;
+      --ink:#090b12;
+      --ink-2:#111623;
+      --cream:#fffaf0;
+      --muted:#c8c6bd;
+      --white:#fff;
+      --sea:#122638;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:'Montserrat',sans-serif;
+      color:var(--white);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,216,77,.08), transparent 30%),
+        radial-gradient(circle at 80% 80%, rgba(255,216,77,.05), transparent 25%),
+        var(--ink);
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:0;
+      opacity:.18;
+      background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+      background-size:30px 30px;
+    }
+
+    .progress{
+      position:fixed;
+      top:0; left:0;
+      height:4px;
+      width:0;
+      z-index:1000;
+      background:linear-gradient(90deg,var(--yellow),var(--gold));
+      box-shadow:0 0 18px rgba(255,216,77,.6);
+    }
+
+    .music-btn{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:1000;
+      width:52px;
+      height:52px;
+      border-radius:50%;
+      border:1px solid rgba(255,216,77,.35);
+      background:rgba(9,11,18,.72);
+      color:var(--yellow);
+      display:grid;
+      place-items:center;
+      font-size:20px;
+      cursor:pointer;
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter:blur(12px);
+      box-shadow:0 10px 30px rgba(0,0,0,.3);
+    }
+
+    .music-btn:hover{transform:translateY(+2px)}
+
+    section{
+      min-height:100vh;
+      position:relative;
+      display:grid;
+      place-items:center;
+      padding:80px 24px;
+      overflow:hidden;
+      z-index:1;
+    }
+
+    .wrap{
+      width:min(1080px,100%);
+      position:relative;
+      z-index:3;
+    }
+
+    .eyebrow{
+      text-transform:uppercase;
+      letter-spacing:.28em;
+      color:var(--yellow);
+      font-size:.8rem;
+      margin-bottom:18px;
+      font-weight:600;
+    }
+
+    h1,h2,h3{
+      font-family:'Cormorant Garamond',serif;
+      margin:0;
+      line-height:.95;
+    }
+
+   h1, h2 {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+@supports (text-wrap: balance) {
+    h1, h2 {
+        text-wrap: balance;
+    }
+}
+h1{
+    font-size: clamp(4.8rem, 9vw, 9rem);
+    max-width: 1050px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+h2{
+    font-size: clamp(3.4rem, 6.5vw, 6.5rem);
+    max-width: 1050px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+h3{
+    font-size: clamp(3.4rem, 6.5vw, 6.5rem);
+    max-width: 1050px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+    .highlight{
+      color:var(--yellow);
+      text-shadow:0 0 28px rgba(255,216,77,.14);
+    }
+
+    .subtitle{
+      margin-top:24px;
+      max-width:720px;
+      line-height:1.8;
+      color:#e8e6df;
+      font-size:clamp(1rem,2vw,1.25rem);
+    }
+
+    .hero{
+      background:
+        linear-gradient(180deg,rgba(9,11,18,.35),rgba(9,11,18,.92)),
+        radial-gradient(circle at center,rgba(255,216,77,.13),transparent 40%);
+    }
+
+    .hero .scroll{
+      position:absolute;
+      bottom:34px;
+      left:50%;
+      transform:translateX(-50%);
+      font-size:.72rem;
+      letter-spacing:.25em;
+      text-transform:uppercase;
+      color:#d8d6cf;
+    }
+
+    .scroll::after{
+      content:"";
+      display:block;
+      width:1px;
+      height:42px;
+      background:linear-gradient(var(--yellow),transparent);
+      margin:12px auto 0;
+      animation:pulse 1.8s infinite;
+    }
+
+    @keyframes pulse{
+      0%,100%{opacity:.2; transform:scaleY(.6)}
+      50%{opacity:1; transform:scaleY(1)}
+    }
+
+    .flower{
+      position:absolute;
+      width:82px;
+      height:82px;
+      opacity:.9;
+      filter:drop-shadow(0 8px 18px rgba(0,0,0,.35));
+      animation:float 8s ease-in-out infinite;
+    }
+
+    .flower span{
+      position:absolute;
+      width:34px;
+      height:44px;
+      left:24px;
+      top:4px;
+      border-radius:50% 50% 46% 46%;
+      background:linear-gradient(180deg,#fff5a2,var(--yellow));
+      transform-origin:17px 37px;
+    }
+
+    .flower span:nth-child(1){transform:rotate(30deg)}
+    .flower span:nth-child(2){transform:rotate(60deg)}
+    .flower span:nth-child(3){transform:rotate(120deg)}
+    .flower span:nth-child(4){transform:rotate(180deg)}
+    .flower span:nth-child(5){transform:rotate(240deg)}
+    .flower span:nth-child(6){transform:rotate(300deg)}
+    .flower::after{
+      content:"";
+      position:absolute;
+      width:24px;
+      height:24px;
+      border-radius:50%;
+      background:#b97a13;
+      top:29px;
+      left:29px;
+      box-shadow:inset 0 0 0 5px #d99d1d;
+    }
+
+    @keyframes float{
+      0%,100%{transform:translateY(0) rotate(-4deg)}
+      50%{transform:translateY(-24px) rotate(5deg)}
+    }
+
+    .f1{left:0%; top: 11%; transform:scale(.8)}
+    .f2{right:7%; top:20%; animation-delay:-2s; transform:scale(1.2)}
+    .f3{left:12%; bottom:2%; animation-delay:-4s}
+    .f4{right:14%; bottom:10%; animation-delay:-1s; transform:scale(.7)}
+
+    .glass{
+      background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.11);
+      border-radius:28px;
+      padding:clamp(26px,5vw,56px);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter:blur(15px);
+      box-shadow:0 30px 80px rgba(0,0,0,.28);
+    }
+
+    .section-flowers{
+      background:
+        radial-gradient(circle at 70% 30%,rgba(255,216,77,.1),transparent 30%),
+        linear-gradient(180deg,#090b12,#121724);
+    }
+
+    .quote{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(2.2rem,5vw,4.8rem);
+      line-height:1.1;
+      max-width:900px;
+    }
+
+    .small{
+      margin-top:24px;
+      color:var(--muted);
+      line-height:1.8;
+      max-width:700px;
+    }
+
+    .sea{
+      background:
+        radial-gradient(circle at 50% 40%,rgba(255,216,77,.09),transparent 32%),
+        linear-gradient(180deg,#0d1520,#0e2534 65%,#071019);
+    }
+
+    .moon{
+      position:absolute;
+      width:260px;
+      aspect-ratio:1;
+      border-radius:50%;
+      right:8vw;
+      top:12vh;
+      background:radial-gradient(circle at 34% 30%,#fffcd8,#f7dc71 55%,#d89e28 100%);
+      box-shadow:0 0 70px rgba(255,216,77,.22);
+      opacity:.9;
+    }
+
+    .wave{
+      position:absolute;
+      left:-10%;
+      width:120%;
+      height:130px;
+      border-radius:50%;
+      border-top:2px solid rgba(255,255,255,.16);
+      bottom:4%;
+      transform:rotate(-2deg);
+    }
+    .wave.w2{bottom:10%;opacity:.45;transform:rotate(2deg)}
+    .wave.w3{bottom:16%;opacity:.25}
+
+    .timeline{
+      display:grid;
+      gap:18px;
+      margin-top:36px;
+      max-width:760px;
+    }
+
+    .step{
+      display:flex;
+      gap:18px;
+      align-items:flex-start;
+      padding:20px 22px;
+      border-radius:20px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .num{
+      min-width:46px;
+      height:46px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      color:#111;
+      background:var(--yellow);
+      font-weight:800;
+    }
+
+    .step strong{display:block;margin-bottom:7px;color:#fff}
+    .step span{color:#c8cbd0;line-height:1.65}
+
+    .promise{
+      background:
+        radial-gradient(circle at 20% 40%,rgba(255,216,77,.1),transparent 26%),
+        radial-gradient(circle at 80% 50%,rgba(255,216,77,.08),transparent 26%),
+        #0c0f18;
+    }
+
+    .promise-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:38px;
+    }
+
+    .card{
+      min-height:230px;
+      padding:26px;
+      border-radius:24px;
+      border:1px solid rgba(255,255,255,.09);
+      background:rgba(255,255,255,.04);
+      transition:.4s ease;
+    }
+    .card:hover{
+      transform:translateY(-7px);
+      border-color:rgba(255,216,77,.35);
+      box-shadow:0 18px 60px rgba(0,0,0,.25);
+    }
+
+    .card .icon{
+      font-size:2rem;
+      margin-bottom:22px;
+    }
+
+    .card h3{
+      font-size:2rem;
+      margin-bottom:12px;
+      color:var(--yellow);
+    }
+
+    .card p{color:#c7c6c2;line-height:1.75;margin:0}
+
+    .final{
+      background:
+        linear-gradient(rgba(6,8,12,.84),rgba(6,8,12,.93)),
+        radial-gradient(circle at center,rgba(255,216,77,.14),transparent 48%);
+      min-height:120vh;
+    }
+
+    .letter{
+      max-width:900px;
+      margin:auto;
+      padding:clamp(28px,6vw,70px);
+      background:
+        linear-gradient(180deg,rgba(255,250,240,.98),rgba(250,243,222,.98));
+      color:#1a1a1a;
+      border-radius:8px;
+      position:relative;
+      box-shadow:0 40px 120px rgba(0,0,0,.5);
+      transform:rotate(-.4deg);
+    }
+
+    .letter::before{
+      content:"";
+      position:absolute;
+      inset:14px;
+      border:1px solid rgba(185,122,19,.22);
+      pointer-events:none;
+    }
+
+    .letter .to{
+      color:#9e711b;
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      font-size:.76rem;
+      font-weight:700;
+      margin-bottom:18px;
+    }
+
+    .letter h2{
+      color:#1b1b1b;
+      font-size:clamp(2.5rem,6vw,5.3rem);
+      margin-bottom:30px;
+    }
+
+    .message{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(1.35rem,2.5vw,2rem);
+      line-height:1.65;
+      color:#2b2925;
+    }
+
+    .signature{
+      margin-top:36px;
+      color:#8b651b;
+      font-family:'Cormorant Garamond',serif;
+      font-size:2rem;
+      font-style:italic;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(60px) scale(.98);
+      transition:opacity .9s ease, transform .9s ease;
+    }
+    .reveal.visible{
+      opacity:1;
+      transform:none;
+    }
+
+    .petal{
+      position:fixed;
+      top:-60px;
+      width:14px;
+      height:20px;
+      border-radius:70% 30% 70% 30%;
+      background:linear-gradient(#fff2a8,#ffd84d);
+      z-index:2;
+      pointer-events:none;
+      opacity:.85;
+      animation:fall linear forwards;
+    }
+
+    @keyframes fall{
+      to{
+        transform:translate3d(var(--drift),110vh,0) rotate(720deg);
+        opacity:.15;
+      }
+    }
+
+    .bouquet-finale{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      padding:70px 20px 30px;
+      background:radial-gradient(ellipse at 50% 45%,rgba(255,216,77,.12),transparent 65%);
+    }
+    .bouquet-finale h2{color:var(--yellow);font-size:clamp(2.4rem,6vw,4.5rem);margin:12px 0}
+    .bouquet-finale p{color:var(--muted);line-height:1.7}
+    .drawn-bouquet{display:block;width:min(100%,520px);height:auto;overflow:visible;filter:drop-shadow(0 20px 24px #0005)}
+    .bouquet-sway{transform-origin:260px 530px;animation:bouquet-breeze 6s ease-in-out infinite}
+    @keyframes bouquet-breeze{0%,100%{transform:rotate(-1deg)}50%{transform:rotate(1deg)}}
+
+    .closing{
+      text-align:center;
+      padding:50px 20px;
+      color:#9fa1a8;
+      font-size:.9rem;
+      letter-spacing:.08em;
+    }
+
+    @media (max-width:800px){
+      .promise-grid{grid-template-columns:1fr}
+      .moon{width:170px;opacity:.45;right:-30px}
+      section{padding:70px 18px}
+      .flower{transform:scale(.65)}
+      .f2{right:-10px}
+      .f3{left:-10px}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      *{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="progress" id="progress"></div>
+
+  <button class="music-btn" id="musicBtn" aria-label="Activar ambiente">♪</button>
+
+  <section class="hero">
+    <div class="flower f1"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="flower f2"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="flower f3"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="flower f4"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+    <div class="wrap reveal">
+      <div class="eyebrow">21 de septiembre · Flores amarillas</div>
+      <h1>Para <span class="highlight">Nelis Marie Belén Guerrero</span></h1>
+      <p class="subtitle">
+        Hay personas que, sin proponérselo, terminan haciendo ciertos momentos más memorables.
+        Hoy no quería enviarte simplemente flores amarillas; quería convertir el detalle en algo que solo tuviera sentido para ti,
+        con referencias, recuerdos y una pequeña aventura escondida en cada scroll.
+      </p>
+    </div>
+
+    <div class="scroll">Desliza hacia abajo</div>
+  </section>
+
+  <section class="section-flowers">
+    <div class="wrap">
+      <div class="glass reveal">
+        <div class="eyebrow">Primera parada</div>
+        <div class="quote">
+          “Las flores amarillas son el detalle. <span class="highlight">La historia detrás de ellas es lo que las hace tuyas.</span>”
+        </div>
+        <p class="small">
+          Podía mandarte una imagen, un mensaje o un ramo. Pero eso habría sido demasiado fácil.
+          Así que preferí hacerte tu propio rincón en Internet: uno que se descubre poco a poco y que no podría estar dedicado a nadie más.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sea">
+    <div class="moon"></div>
+    <div class="wave"></div>
+    <div class="wave w2"></div>
+    <div class="wave w3"></div>
+
+    <div class="wrap reveal">
+      <div class="eyebrow">Segunda parada · nuestro mar</div>
+      <h2>La capital cambia el mapa, <span class="highlight">pero no borra lo vivido.</span></h2>
+      <p class="subtitle">
+        Ahora viene un cambio de escenario: otra ciudad, nuevas rutinas, nuevas personas y nuevas historias. Y quizás eso sea precisamente lo interesante: descubrir qué cosas siguen teniendo valor incluso cuando el mapa cambia.
+      </p>
+
+      <div class="timeline">
+        <div class="step">
+          <div class="num">01</div>
+          <div><strong>Confiar</strong><span>Sin convertir la distancia en un problema antes de que siquiera empiece la aventura.</span></div>
+        </div>
+        <div class="step">
+          <div class="num">02</div>
+          <div><strong>Crecer</strong><span>Que este nuevo capítulo sirva para aprender, avanzar y regresar con muchas historias que contar.</span></div>
+        </div>
+        <div class="step">
+          <div class="num">03</div>
+          <div><strong>Volver a encontrarnos</strong><span>Porque algunas de las mejores partes de una aventura son las historias que uno guarda para contar cuando vuelve.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="promise">
+    <div class="wrap reveal">
+      <div class="eyebrow">Tercera parada</div>
+      <h2>No todo detalle necesita una explicación. <span class="highlight">Algunos solo necesitan ser inolvidables.</span></h2>
+
+      <div class="promise-grid">
+        <article class="card">
+          <div class="icon">🌻</div>
+          <h3>Presente</h3>
+          <p>Un recordatorio de que hoy alguien se tomó el tiempo de hacer algo pensado específicamente para ti.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🧭</div>
+          <h3>Dirección</h3>
+          <p>La capital es solo una nueva isla en el mapa. Lo importante será todo lo que descubras cuando llegues allí.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🌊</div>
+          <h3>Nosotros</h3>
+          <p>Una referencia que probablemente solo nosotros entendamos del todo: crecer por separado sin hacer que lo importante desaparezca.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap reveal">
+      <div class="letter">
+        <div class="to">Para Nelis Marie Belén Guerrero</div>
+        <h2>Si llegaste hasta aquí, encontraste el verdadero mensaje...</h2>
+
+        <div class="message">
+          “Me quedé pensando en lo que me dijiste de One Piece y en eso de que soy tu Luffy. Así que se me ocurrió que tu ida a la capital puede ser nuestro pequeño 3D2Y: no como una despedida, sino como un salto de tiempo. Tú tendrás nuevas aventuras, yo las mías, y cuando volvamos a coincidir tendremos más historias, más experiencia y probablemente más de una locura que contar. No sé qué tendrá preparado el Nuevo Mundo, pero sí sé que hay personas y momentos que vale la pena conservar aunque cambien las coordenadas. Estas flores amarillas son simplemente mi forma de dejarte uno de esos momentos.”
+        </div>
+
+        <div class="signature">Un detalle hecho solo para Nelis. 🌻</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bouquet-finale" aria-labelledby="bouquet-title">
+    <div class="eyebrow">Una última sorpresa</div>
+    <h2 id="bouquet-title">Estas flores son para ti.</h2>
+    <p>Un poquito de sol para acompañarte en cada nueva aventura.</p>
+    <svg class="drawn-bouquet" viewBox="0 0 520 650" role="img" aria-labelledby="bouquet-description">
+      <title id="bouquet-description">Ramo de siete flores amarillas con hojas verdes, papel crema y un lazo dorado, para Nelis.</title>
+      <defs>
+        <linearGradient id="petal-gold" x2="0.3" y2="1">
+          <stop stop-color="#fff5ac" />
+          <stop offset=".5" stop-color="#ffda38" />
+          <stop offset="1" stop-color="#e9a20b" />
+        </linearGradient>
+        <linearGradient id="leaf-green">
+          <stop stop-color="#244d36" />
+          <stop offset="1" stop-color="#86ad58" />
+        </linearGradient>
+        <linearGradient id="bouquet-paper" x2="1" y2="1">
+          <stop stop-color="#fff7df" />
+          <stop offset=".5" stop-color="#e9d7ae" />
+          <stop offset="1" stop-color="#b99b6a" />
+        </linearGradient>
+        <linearGradient id="bow-gold" x2=".5" y2="1">
+          <stop stop-color="#fff1a0" />
+          <stop offset=".5" stop-color="#edbf39" />
+          <stop offset="1" stop-color="#b67a13" />
+        </linearGradient>
+        <radialGradient id="flower-heart">
+          <stop stop-color="#946029" />
+          <stop offset=".75" stop-color="#593319" />
+          <stop offset="1" stop-color="#372316" />
+        </radialGradient>
+        <g id="yellow-petal">
+          <ellipse cx="0" cy="-36" rx="13" ry="32" fill="url(#petal-gold)" />
+          <path d="M0-60V-22" stroke="#fff4b0" stroke-opacity=".4" fill="none" />
+        </g>
+        <g id="yellow-bloom">
+          <use href="#yellow-petal" />
+          <use href="#yellow-petal" transform="rotate(30)" />
+          <use href="#yellow-petal" transform="rotate(60)" />
+          <use href="#yellow-petal" transform="rotate(90)" />
+          <use href="#yellow-petal" transform="rotate(120)" />
+          <use href="#yellow-petal" transform="rotate(150)" />
+          <use href="#yellow-petal" transform="rotate(180)" />
+          <use href="#yellow-petal" transform="rotate(210)" />
+          <use href="#yellow-petal" transform="rotate(240)" />
+          <use href="#yellow-petal" transform="rotate(270)" />
+          <use href="#yellow-petal" transform="rotate(300)" />
+          <use href="#yellow-petal" transform="rotate(330)" />
+          <circle r="25" fill="url(#flower-heart)" stroke="#d39b28" stroke-width="3" />
+          <g fill="#deb15a" opacity=".6">
+            <circle cy="-13" r="2" />
+            <circle cx="12" cy="-5" r="2" />
+            <circle cx="8" cy="11" r="2" />
+            <circle cx="-8" cy="11" r="2" />
+            <circle cx="-12" cy="-5" r="2" />
+            <circle r="2" />
+          </g>
+        </g>
+        <g id="bouquet-leaf">
+          <path d="M0 0Q-48-8-45-65Q4-51 0 0" fill="url(#leaf-green)" />
+          <path d="M0 0-34-48" stroke="#adc780" stroke-opacity=".45" fill="none" />
+        </g>
+      </defs>
+      <ellipse cx="260" cy="615" rx="115" ry="13" fill="#000" opacity=".2" />
+      <g class="bouquet-sway">
+        <path d="M95 247 225 563 301 568 433 247 320 297 258 210 197 295Z" fill="url(#bouquet-paper)" />
+        <g fill="none" stroke="#547b42" stroke-width="7" stroke-linecap="round">
+          <path d="M154 208Q203 372 281 593M258 135 252 598M365 205Q307 407 239 593M128 310 270 600M264 281 260 602M392 314 247 604M207 221 274 598" />
+        </g>
+        <g>
+          <use href="#bouquet-leaf" transform="translate(178 266) rotate(-35) scale(1.2)" />
+          <use href="#bouquet-leaf" transform="translate(231 192) rotate(-18)" />
+          <use href="#bouquet-leaf" transform="translate(286 207) rotate(80) scale(1.4)" />
+          <use href="#bouquet-leaf" transform="translate(367 291) rotate(110) scale(1.3)" />
+          <use href="#bouquet-leaf" transform="translate(149 352) rotate(-40)" />
+          <use href="#bouquet-leaf" transform="translate(321 366) rotate(100)" />
+          <use href="#bouquet-leaf" transform="translate(200 370) rotate(-20)" />
+          <use href="#bouquet-leaf" transform="translate(380 215) rotate(75)" />
+        </g>
+        <use href="#yellow-bloom" transform="translate(258 135) rotate(10) scale(1.05)" />
+        <use href="#yellow-bloom" transform="translate(154 208) rotate(-12)" />
+        <use href="#yellow-bloom" transform="translate(365 205) rotate(16)" />
+        <use href="#yellow-bloom" transform="translate(232 232) scale(.85)" />
+        <use href="#yellow-bloom" transform="translate(128 310) rotate(8) scale(.78)" />
+        <use href="#yellow-bloom" transform="translate(392 314) rotate(-8) scale(.78)" />
+        <use href="#yellow-bloom" transform="translate(282 311) rotate(15) scale(1.12)" />
+        <path d="M101 348Q173 381 290 429L303 563 226 572Z" fill="url(#bouquet-paper)" />
+        <path d="M419 344Q350 381 251 431L226 572 303 563Z" fill="url(#bouquet-paper)" />
+        <path d="m112 359 125 191m172-194L290 550" fill="none" stroke="#fff8e6" stroke-opacity=".6" stroke-width="2" />
+        <g fill="url(#bow-gold)" stroke="#c79627" stroke-width="1">
+          <path d="M259 513Q185 455 178 500T259 529Q337 551 339 499T259 513Z" />
+          <path d="M250 524 204 609 234 600 247 619 270 526Z" />
+          <path d="m264 525 17 91 17-20 30 9-50-85Z" />
+          <rect x="248" y="507" width="29" height="29" rx="9" />
+        </g>
+      </g>
+    </svg>
+    <p>Para Nelis, con mucho cariño. 🌻</p>
+  </section>
+
+  <div class="closing">NO ERA SOLO UN RAMO. ERA TU PROPIA PEQUEÑA AVENTURA · 🌻</div>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    },{threshold:.18});
+
+    revealEls.forEach(el=>observer.observe(el));
+
+    window.addEventListener('scroll',()=>{
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const percent = Math.min(100,(scrollTop/docHeight)*100);
+      document.getElementById('progress').style.width = percent + '%';
+    });
+
+    function createPetal(){
+      const petal = document.createElement('div');
+      petal.className = 'petal';
+      petal.style.left = Math.random()*100 + 'vw';
+      petal.style.animationDuration = (7 + Math.random()*7) + 's';
+      petal.style.setProperty('--drift', (Math.random()*220-110) + 'px');
+      petal.style.transform = `scale(${.55 + Math.random()*.9}) rotate(${Math.random()*180}deg)`;
+      document.body.appendChild(petal);
+      setTimeout(()=>petal.remove(),15000);
+    }
+
+    setInterval(createPetal,650);
+    for(let i=0;i<16;i++) setTimeout(createPetal,i*180);
+
+    // Pequeño ambiente sonoro generado por Web Audio, sin archivos externos.
+    let audioCtx, playing = false, master;
+
+    function startAmbience(){
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      master = audioCtx.createGain();
+      master.gain.value = .035;
+      master.connect(audioCtx.destination);
+
+      const notes = [261.63,329.63,392.00,493.88];
+      let i=0;
+
+      window.ambienceTimer = setInterval(()=>{
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type='sine';
+        osc.frequency.value = notes[i++ % notes.length] / 2;
+        gain.gain.setValueAtTime(0,audioCtx.currentTime);
+        gain.gain.linearRampToValueAtTime(.7,audioCtx.currentTime+.25);
+        gain.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+2.2);
+        osc.connect(gain);
+        gain.connect(master);
+        osc.start();
+        osc.stop(audioCtx.currentTime+2.3);
+      },1900);
+    }
+
+    function stopAmbience(){
+      clearInterval(window.ambienceTimer);
+      if(audioCtx) audioCtx.close();
+    }
+
+    document.getElementById('musicBtn').addEventListener('click',function(){
+      playing=!playing;
+      this.textContent = playing ? '♫' : '♪';
+      this.style.boxShadow = playing
+        ? '0 0 28px rgba(255,216,77,.35)'
+        : '0 10px 30px rgba(0,0,0,.3)';
+      if(playing) startAmbience(); else stopAmbience();
+    });
+  </script>
+</body>
+</html>
+<button
+      class="boton-flores"
+      onclick="irAFlores()"
+    >
+      🌻 Ver flores amarillas
+    </button>
+    <script>
+  function irAFlores() {
+    window.location.href = "Nelis.html";
+  }
+</script>
