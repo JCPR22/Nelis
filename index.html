@@ -1035,6 +1035,43 @@
       line-height: 1.7;
     }
 
+    .dedicatoria {
+      width: min(100%, 650px);
+      margin: 20px auto 10px;
+      padding: clamp(12px, 4vw, 32px);
+      text-align: center;
+    }
+
+    .bouquet-finale .dedicatoria p {
+      max-width: none;
+      margin: 0 0 24px;
+      color: #d8d2c5;
+      font-size: clamp(16px, 2vw, 18px);
+      line-height: 1.95;
+      text-wrap: pretty;
+    }
+
+    .bouquet-finale .dedicatoria .dedicatoria-inicio {
+      color: #fff0bc;
+      font-family: Georgia, serif;
+      font-size: clamp(23px, 3.5vw, 30px);
+      line-height: 1.55;
+    }
+
+    .dedicatoria strong {
+      color: #ffe18a;
+      font-weight: 600;
+    }
+
+    .bouquet-finale .dedicatoria .dedicatoria-cierre {
+      margin: 30px 0 0;
+      color: #f2dba0;
+      font-family: Georgia, serif;
+      font-size: clamp(20px, 3vw, 25px);
+      font-style: italic;
+      line-height: 1.7;
+    }
+
     .drawn-bouquet {
       display: block;
       width: min(100%, 520px);
@@ -1139,14 +1176,34 @@
   <section class="bouquet-finale" aria-labelledby="bouquet-title">
     <div class="eyebrow">Una última sorpresa</div>
     <h2 id="bouquet-title">Estas flores son para ti.</h2>
-    <p>Un poquito de sol para iluminar tus días y acompañarte en cada nueva aventura que la vida ponga en tu camino. ☀️✨
+    <div class="dedicatoria">
+      <p class="dedicatoria-inicio">
+        Un poquito de sol para iluminar tus días y acompañarte en cada nueva
+        aventura que la vida ponga en tu camino. ☀️✨
+      </p>
 
-Quise darte este pequeño detalle porque eres una persona muy especial para mí, de esas que con su forma de ser logran hacer los momentos un poquito más bonitos.
+      <p>
+        <strong>Quise darte este pequeño detalle porque eres una
+        persona muy especial para mí, de esas que con su forma
+        de ser logran hacer los momentos un poquito más bonitos.</strong>
+      </p>
 
-Espero que cada vez que lo veas recuerdes lo mucho que vales y que siempre tengas motivos para sonreír, soñar y seguir descubriendo cosas nuevas.
+      <p>
+        <strong>Espero que cada vez que lo veas recuerdes lo mucho que vales
+        y que siempre tengas motivos para sonreír, soñar y seguir descubriendo
+        cosas nuevas.</strong>
+      </p>
 
-Que nunca te falten nuevas aventuras, momentos inolvidables y personas que sepan apreciar lo increíble que eres. Esto es solo un pequeño detalle para alguien que ocupa un lugar muy especial en mi corazón. ❤️
-.</p>
+      <p>
+        <strong>Que nunca te falten nuevas aventuras, momentos inolvidables y personas
+        que sepan apreciar lo increíble que eres.</strong>
+      </p>
+
+      <p class="dedicatoria-cierre">
+        Esto es solo un pequeño detalle para alguien que ocupa un lugar
+        muy especial en mi corazón. ❤️
+      </p>
+    </div>
     <svg class="drawn-bouquet" viewBox="0 0 520 650" role="img" aria-labelledby="bouquet-description">
       <defs>
         <linearGradient id="petal-gold" x2="0.3" y2="1">
@@ -1239,7 +1296,7 @@ Que nunca te falten nuevas aventuras, momentos inolvidables y personas que sepan
         </g>
       </g>
     </svg>
-    <p>Para Nelis, con mucho amor y cariño. 🌻</p>
+    <p ><strong> Nelis, con mucho amor y cariño. </strong>🌻</p>
   </section>
 
 
